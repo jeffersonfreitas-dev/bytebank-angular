@@ -7,7 +7,11 @@ import { Component } from "@angular/core";
 })
 
 export class NovaTransferenciaComponent {
+
+  valor: number
+  destino: number
+
   transferir(){
-    alert("Nova transferencia realizada")
+    alert("Nova transferencia realizada - " + this.valor +" - "+ this.destino)
   }
 }

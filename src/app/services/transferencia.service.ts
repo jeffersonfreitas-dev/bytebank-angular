@@ -23,9 +23,9 @@ export class TransferenciaService {
     return this.httpClient.get<Transferencia[]>(this.url);
   }
 
-  adicionar(transferencia: any){
+  adicionar(transferencia: Transferencia) : Observable<Transferencia>{
     this.setData(transferencia);
-    this.listaTransferencia.push(transferencia);
+    return this.httpClient.post<Transferencia>(this.url, transferencia);
   }
 
   private setData(transferencia: any){
